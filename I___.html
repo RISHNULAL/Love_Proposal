@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book of Magic</title>
+
+<style>
+
+/* ================= BASE ================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at center, #2b160f, #120906 80%);
+    font-family: Georgia, serif;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+/* ================= BOOK PAGE ================= */
+
+.page {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: radial-gradient(circle at center, #2b160f, #120906 80%);
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
+}
+
+/* ================= PARCHMENT ================= */
+
+.paper {
+    width: 70%;
+    max-width: 750px;
+    padding: 70px 60px;
+    background: linear-gradient(145deg, #f3e0b4, #e5c88c);
+    border: 2px solid #c4a25d;
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.8),
+        inset 0 0 80px rgba(120,80,40,0.4);
+    border-radius: 6px;
+    text-align: center;
+    animation: floatPaper 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatPaper {
+    from { transform: translateY(0); }
+    to { transform: translateY(-15px); }
+}
+
+h1 {
+    font-size: 40px;
+    letter-spacing: 3px;
+    color: #4b2e1c;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #4b2e1c;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #3b2415;
+}
+
+/* ================= LOVE PAGE ================= */
+
+.love-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.love-text {
+    font-family: "Brush Script MT", cursive;
+    font-size: 70px;
+    color: #a30000;
+    animation: loveGlow 2s ease-in-out infinite alternate;
+}
+
+/* Glow animation */
+@keyframes loveGlow {
+    from {
+        text-shadow: 0 0 10px rgba(255,0,0,0.5);
+        transform: scale(0.95);
+    }
+    to {
+        text-shadow: 0 0 40px rgba(255,0,0,0.9);
+        transform: scale(1.05);
+    }
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #0e0503;
+    color: #c4a25d;
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    position: relative;
+    z-index: 200;
+}
+
+a {
+    color: #c4a25d;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+    .paper{
+        width: 85%;
+        padding: 40px 30px;
+    }
+    .love-text{
+        font-size: 40px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+    <div class="paper">
+        <h1>Scroll Down to See My Magic</h1>
+    </div>
+</div>
+
+<div class="page">
+    <div class="paper">
+        <h2>Beauty</h2>
+        <p>
+            Beauty lives in shadow and flame —  
+            quiet, radiant, unforgettable.
+        </p>
+    </div>
+</div>
+
+<div class="page">
+    <div class="paper">
+        <h2>Skills</h2>
+        <p>
+            Skills are carved in silence,  
+            shaped through patience,  
+            mastered with devotion.
+        </p>
+    </div>
+</div>
+
+<div class="page">
+    <div class="paper">
+        <h2>Presence</h2>
+        <p>
+            Presence is gravity without force —  
+            felt deeply, remembered always.
+        </p>
+    </div>
+</div>
+
+<div class="page love-page">
+    <div class="heart-container">
+        <div class="heart"></div>
+        <div class="love-text">I Love You</div>
+    </div>
+</div>
+
+<footer>
+    Programmed by YOUR_NAME |
+    <a href="https://github.com/RISHNULAL" target="_blank">
+        GitHub
+    </a>
+</footer>
+
+</body>
+</html>

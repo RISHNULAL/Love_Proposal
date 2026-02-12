@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposal Story</title>
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: radial-gradient(circle at center, #3b1f14, #140907 80%);
+    overflow-x: hidden;
+    height: 500vh; /* 5 scroll steps */
+}
+
+/* ================= PAGE STACK ================= */
+
+.page {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+/* Parchment Card */
+.paper {
+    width: 70%;
+    max-width: 750px;
+    padding: 70px 60px;
+    background: linear-gradient(145deg, #f5e3b5, #e6c98f);
+    border: 2px solid #c6a25d;
+    box-shadow:
+        0 40px 80px rgba(0,0,0,0.8),
+        inset 0 0 60px rgba(120,80,40,0.4);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h1 { font-size: 40px; letter-spacing: 3px; }
+h2 { font-size: 28px; margin-bottom: 20px; }
+p { font-size: 18px; line-height: 1.9; }
+
+/* ================= LOVE PAGE ================= */
+
+.love-section {
+    background: radial-gradient(circle at center, #5c1f1f, #140907 85%);
+    opacity: 0;
+}
+
+/* Container for Heart and Text to align them */
+.heart-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heart */
+.heart {
+    font-size: 180px;
+    color: #ff0000;
+    transform: scale(0);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    cursor: pointer;
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+/* Love Text */
+.love-text {
+    font-family: "Brush Script MT", cursive;
+    font-size: 45px;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: -150%; /* Start far off to the left */
+    transform: translate(-50%, -50%);
+    transition: left 1s ease-out;
+    z-index: 10;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #120705;
+    color: #d6b37c;
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page" id="page1" style="z-index:5;">
+    <div class="paper">
+        <h1>Scroll</h1>
+    </div>
+</div>
+
+<div class="page" id="page2" style="z-index:4;">
+    <div class="paper">
+        <h2>Beauty</h2>
+        <p>Beauty is warmth in darkness — silent yet unforgettable.</p>
+    </div>
+</div>
+
+<div class="page" id="page3" style="z-index:3;">
+    <div class="paper">
+        <h2>Skills</h2>
+        <p>Skills are shaped in silence and strengthened by devotion.</p>
+    </div>
+</div>
+
+<div class="page" id="page4" style="z-index:2;">
+    <div class="paper">
+        <h2>Presence</h2>
+        <p>Presence is quiet power — felt deeply, remembered always.</p>
+    </div>
+</div>
+
+<div class="page love-section" id="page5" style="z-index:1;">
+    <div class="heart-wrapper">
+        <div class="heart" id="heart">❤️</div>
+        <div class="love-text" id="loveText">I LOVE YOU</div>
+    </div>
+    <footer>
+        Programmed by Rishnu Lal N
+        <a href="https://github.com/" target="_blank" style="text-decoration: none; vertical-align: middle; margin-left: 5px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#d6b37c" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+        </a>
+    </footer>
+</div>
+
+<script>
+
+const pages = document.querySelectorAll(".page");
+const heart = document.getElementById("heart");
+const loveText = document.getElementById("loveText");
+const footer = document.querySelector("footer");
+
+window.addEventListener("scroll", () => {
+
+    const scrollY = window.scrollY;
+    const height = window.innerHeight;
+
+    pages.forEach((page, index) => {
+        // Don't move the last page (the love section)
+        if (index === pages.length - 1) return;
+
+        let offset = index * height;
+        
+        // Logic for stacking and unstacking
+        if (scrollY > offset) {
+            page.style.transform = "translateY(-100%)";
+            page.style.opacity = "0";
+        } else {
+            // This brings the page back when scrolling up
+            page.style.transform = "translateY(0)";
+            page.style.opacity = "1";
+        }
+    });
+
+    // Love page animation trigger
+    // Trigger when we are deep into the last scroll section
+    if (scrollY > (pages.length - 1.5) * height) {
+        
+        // 1. Show Love Section Background
+        document.querySelector('.love-section').style.opacity = "1";
+        footer.style.opacity = "1";
+        footer.style.pointerEvents = "auto";
+
+        // 2. Pop the heart in
+        heart.style.transform = "scale(1)";
+
+        // 3. Slide text in after a short delay
+        setTimeout(() => {
+            loveText.style.left = "50%"; // Center it
+        }, 600);
+
+        // 4. Start heartbeat after text arrives
+        setTimeout(() => {
+            heart.style.animation = "heartbeat 1.2s infinite";
+        }, 1600);
+
+    } else {
+        // Reset animations if user scrolls back up
+        document.querySelector('.love-section').style.opacity = "0";
+        footer.style.opacity = "0";
+        footer.style.pointerEvents = "none";
+        heart.style.transform = "scale(0)";
+        heart.style.animation = "none";
+        loveText.style.left = "-150%";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
